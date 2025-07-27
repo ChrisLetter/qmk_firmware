@@ -29,18 +29,13 @@ extern uint8_t is_master;
 #define SCR_6 LSFT(LALT(KC_6))
 #define SCR_7 LSFT(LALT(KC_7))
 #define SCR_8 LSFT(LALT(KC_8))
-#define SCR_9 LSFT(LALT(KC_9))
-#define SCR_0 LSFT(LALT(KC_0))
 #define SCR_LEFT LSFT(LALT(KC_H))
 #define SCR_RIGHT LSFT(LALT(KC_L))
-#define SCR_UP LSFT(LALT(KC_E))
-#define SCR_DOWN LSFT(LALT(KC_N))
 #define MV_LFT LSFT(LALT(KC_S))
 #define MV_RGT LSFT(LALT(KC_R))
 #define MV_UP LSFT(LALT(KC_U))
 #define MV_DOWN LSFT(LALT(KC_D))
-#define QUIT LSFT(LALT(KC_Q))
-#define CLOSE_W LSFT(LALT(KC_W))
+#define SCR_TGG LSFT(LALT(KC_SLSH))
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [COLEMAK] = LAYOUT( \
@@ -93,11 +88,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [UTIL] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,  XXXXXXX, XXXXXXX, MV_UP,  MV_DOWN, XXXXXXX,                    _______, SCR_RIGHT, _______, _______, _______, _______,\
+  XXXXXXX, XXXXXXX, XXXXXXX, SCR_LEFT, SCR_RIGHT, SCR_TGG,                      _______, _______, _______, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      MV_LFT,  SCR_4,  SCR_3,   SCR_2,   SCR_1,  MV_RGT,                        _______, SCR_DOWN, SCR_UP , _______, _______, _______,\
+      MV_LFT,  SCR_4,  SCR_3,   SCR_2,   SCR_1,  MV_RGT,                        _______, _______, _______, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, SCR_9,   SCR_8,   SCR_7,    SCR_5, SCR_6,                        _______, SCR_LEFT, _______, _______, _______, _______,\
+      MV_UP, SCR_8,   SCR_7,   SCR_6,    SCR_5, MV_DOWN,                        _______, _______, _______, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           UTIL, _______, _______,       XXXXXXX, LALT(KC_S), XXXXXXX\
                                       //`--------------------------'  `--------------------------'
